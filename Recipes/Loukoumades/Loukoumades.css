@@ -1,0 +1,458 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+}
+@font-face { 
+    font-family: "FatheyaFood";
+    src: url("../../Resources/FatheyaFood.ttf");
+}
+@font-face {
+    font-family: "Amethysta-Regular";
+    src: url("../../Resources/Amethysta-Regular.ttf")
+}
+@font-face {
+    font-family: "Comfortaa";
+    src: url("../../Resources/Comfortaa.ttf")
+}
+html {
+    height:100%;
+    
+}
+#page-wrapper {
+    position:relative;
+}
+body {
+    background: linear-gradient(180deg, rgb(105, 91, 50),rgb(212, 170, 97)) fixed;
+    height: 100%;
+}
+#nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 13vh;
+    background-color: #c3b091;
+    font-family: fatheyafood;
+    font-size: 3.5em;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: transform 0.2s;
+    z-index:1;
+    animation: menu-load 600ms ease-out;
+}
+#nav-bar ul {
+    display: flex;
+    flex-direction: row;
+}
+#nav-bar ul > li {
+    list-style: none;
+}
+.nav-link {
+    text-decoration: none;
+    color: black;
+    transition: background 0.5s ease-out;
+    padding:1vh 3vh;
+}
+#nav-list a:hover {
+    background:white;
+}
+.nav--hidden {
+    transform: translateY(calc(-1 * 10vh));;
+    box-shadow: none;
+  }
+#title {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    padding-top:11vh;
+    margin: 0 auto;
+    animation: title-load 2s ease-out;
+}
+#title h1 {
+    font-family:FatheyaFood;
+    font-size: 5em;
+    margin: 2vh auto;
+    padding-top: 3vh;
+    filter: drop-shadow(2px 2px 0 white);
+}
+#pic {
+    width: 20em;
+    height: 20em;
+    border: double 0.5em blanchedalmond;
+    border-radius: 50%;
+    background: linear-gradient(90deg, white, black);
+    background-origin: border-box;
+    animation: picture 1s ease-out;
+    animation-fill-mode: forwards;
+}
+#second-wrapper {
+    width: 60vw;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin:-25vh auto 0 auto;
+    background-color: #00553f;
+    border: double 0.5em blanchedalmond;
+    border-radius: 20px;
+    font-family: Amethysta-Regular;
+    Color: white;
+}
+#third-wrapper {
+    width: 40em;
+    margin: 0 auto;
+}
+#prep-info {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    margin-top:170px;
+    margin-left:auto;
+    margin-right: auto;
+    border: 2px solid blanchedalmond;
+    background-color: black;
+    border-radius:20px;
+}
+.ci {
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    font-family: Amethysta-Regular;
+}
+.a {
+    color: gold;
+    font-size: large;
+    font-family: Comfortaa;
+}
+
+.t1 {
+    display:flex;
+    justify-content: center;
+    padding: 1em 0 1em 0;
+    color: gold;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; 
+}
+#ingredients-list {
+    margin: 20px 0 0 40px;
+}
+#instructions-list {
+    margin-left: 18px;
+}
+#instructions-list > li {
+    padding: 8px 0;
+}
+#nutrition-label {
+    margin-top:-10px;
+    padding-bottom: 20px;
+}
+.background-label {
+    font-family: 'Open Sans', sans-serif;
+    border: 2px solid black;
+    width: 270px;
+    margin: 20px auto;
+    padding: 0 7px;
+    background-color: white;
+    color:black;
+} 
+.daily-value > p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+} 
+.divider {
+    border-bottom: 1px solid #888989;
+    margin: 2px 0;
+} 
+.bold {
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+}
+.large {
+    height: 10px;
+}
+.large, .medium {
+    background-color: black;
+    border: 0;
+}
+.medium {
+    height: 5px;
+}
+.small-text {
+    font-size: 0.85rem;
+}
+.calories-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.calories-info h2 {
+    margin: 0;
+}
+.left-container p {
+    margin: -5px -2px;
+    font-size: 2em;
+    font-weight: 700;
+}
+.calories-info span {
+    margin: -7px -2px;
+    font-size: 2.4em;
+    font-weight: 700;
+}
+.right {
+    justify-content: flex-end;
+}
+.indent {
+      margin-left:1em
+}
+.daily-value p:not(.no-divider) {
+      border-bottom:1px solid #888989;
+}
+.double-indent {
+      margin-left:2em;
+}
+.note {
+    font-size: 0.6rem;
+    margin: 5px 0;
+    padding:0 8px;
+    text-indent:-8px;
+}
+#nutrition-table-mobile {
+    width: 100%
+}
+#nutrition-table-mobile-background {
+    background: white;
+    color: black;
+    margin-left: -2px;
+    width: 70vw;
+    margin-bottom: 4px;
+    font-size: 4px;
+    border: 1px solid black;
+}
+#nt {
+    padding: 2px;
+}
+#ntt {
+    font-size: 6px;
+    font-weight: bold;
+    padding: 3px 0 1px 0;
+}
+#dv {
+    display: flex;
+    justify-content:flex-end;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+#nts {
+    padding: 1px 0 3px 0;
+}
+#ntf {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.ntf-content{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px 2px;
+    border-bottom: 0.5px solid gray;
+}
+.comp {
+    font-weight: bold;
+}
+#footer-link {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    height: 13vh;
+    background-color: #c3b091;
+    border-top: 2px solid black;
+    border-bottom:2px solid black;
+    font-family: FatheyaFood;
+    font-size: 3.5em;
+    margin-top: 10px;
+}
+#footer-link a {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    padding: 5px 3vh 5px 3vh;
+    transition: background-color 0.5s ease-out;
+}
+#footer-link a:hover {
+    background-color: white;
+}
+@keyframes menu-load {
+    0% {
+        transform: translateY(-100%);
+    }
+    60% {
+        transform: translateY(10%);
+    }
+    70% {
+        transform: translateY(-20%)
+    }
+    80% {
+        transform: translateY(5%);
+    }
+    90% {
+        transform: translateY(-10%)
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes picture {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes title-load {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    #nav-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 15vh;
+        font-size: 10px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    #nav-bar ul {
+        align-items: center;
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap:2px;
+        row-gap: 2px;
+    }
+    #nav-link{
+        width: 100%;
+    }
+    #pic {
+        width:50px;
+        height:50px;
+        border: solid 1px blanchedalmond;
+    }
+    #title {
+        padding-top: 15vh;
+    }
+    #title h1 {
+        font-size: 1.1em;
+        margin: 2vh auto;
+        filter: drop-shadow(1px 1px 0 white);
+    }
+    #prep-info {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top:30px;
+        margin-left:auto;
+        margin-right: auto;
+        border: 1px solid blanchedalmond;
+        background-color: black;
+        border-radius:5px;
+        padding: 5px;
+        width: 50px;
+        white-space: normal;
+    }
+    #second-wrapper {
+        width: 80vw;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        margin: -15vh auto 0 auto;
+        border: solid 1px blanchedalmond;
+        border-radius: 5px;
+        font-size: 5px;
+    }
+    #third-wrapper {
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        width: 80vw;
+    }
+    .ci {
+        display: flex;
+        flex-direction: column;
+        padding: 3px 0;
+    }
+    .ci, .a {
+    font-size: 5px;
+    }
+    .ci:nth-child(3) {
+        margin-left:5px;
+    }
+    .ci:nth-child(4) {
+        margin-left:-1px;
+    }
+    .ci:nth-child(5) {
+        margin-left:-5px;
+    }
+    #description {
+        padding:0 3px 0 3px;
+        margin-left: 0;
+    }
+    #ingredients {
+        padding:0 5px 0 4px;
+    }
+    #ingredients-list {
+        margin:0;
+        padding-top: 5px;
+        padding-left:1px;
+        list-style-position: inside;
+    }
+    #instructions {
+        margin-left: -10px;
+        padding-right: 4px;
+    }
+    #instructions-list > li{
+        padding: 0;
+    }
+    .background-label {
+        display: none;
+    }
+    #footer-link {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        width: 100vw;
+        font-size: 10px;
+        border-top: 1px solid black;
+    }
+    #footer-option {
+        transition: transform 0.5s ease-out !important;
+        padding: 0 !important;
+
+    }
+    #footer-option:hover {
+        padding: 1px 5px 4px 4px !important;
+        transform: scale(1.1);
+    }
+}
+@media (min-width: 600px) {
+    #nutrition-table-mobile {
+        display: none;
+    }
+}
