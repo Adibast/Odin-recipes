@@ -16,16 +16,9 @@
     font-family: "Comfortaa";
     src: url("../../Resources/Comfortaa.ttf")
 }
-html {
-    height:100%;
-    
-}
-#page-wrapper {
-    position:relative;
-}
 body {
     background: linear-gradient(180deg, rgb(105, 91, 50),rgb(212, 170, 97)) fixed;
-    height: 100%;
+    height: 100vh;
 }
 #nav-bar {
     display: flex;
@@ -60,7 +53,7 @@ body {
     background:white;
 }
 .nav--hidden {
-    transform: translateY(calc(-1 * 10vh));;
+    transform: translateY(calc(-1 * 20vh));;
     box-shadow: none;
   }
 #title {
@@ -77,7 +70,6 @@ body {
     font-family:FatheyaFood;
     font-size: 5em;
     margin: 2vh auto;
-    padding-top: 3vh;
     filter: drop-shadow(2px 2px 0 white);
 }
 #pic {
@@ -327,62 +319,61 @@ body {
         opacity: 1;
     }
 }
-
 @media (max-width: 600px) {
+    body {
+        min-height: 100vh
+    }
+    #page-wrapper {
+        height: 100%;
+    }
     #nav-bar {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100vw;
-        height: 15vh;
-        font-size: 10px;
+        height: 8vh;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
+        overflow: clip;
     }
     #nav-bar ul {
+        display: flex;
         align-items: center;
-        display: grid;
-        grid-template-columns: auto auto;
-        column-gap:2px;
-        row-gap: 2px;
-    }
-    #nav-link{
+        justify-content: center;
         width: 100%;
+        height: 100%;
+    }
+    #nav-bar ul > li {
+        height: 100%;
+    }
+    .nav-link{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        height: 100%;
+        font-size: 0.55em;
+        padding: 0 0.5em;
     }
     #pic {
-        width:50px;
-        height:50px;
+        width: 10em;
+        height: 10em;
         border: solid 1px blanchedalmond;
     }
     #title {
-        padding-top: 15vh;
+        padding-top: 8vh;
     }
     #title h1 {
-        font-size: 1.1em;
+        height: 1em;
+        font-size: 3em;
         margin: 2vh auto;
         filter: drop-shadow(1px 1px 0 white);
     }
-    #prep-info {
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top:30px;
-        margin-left:auto;
-        margin-right: auto;
-        border: 1px solid blanchedalmond;
-        background-color: black;
-        border-radius:5px;
-        padding: 5px;
-        width: 50px;
-        white-space: normal;
-    }
     #second-wrapper {
-        width: 80vw;
         display:flex;
         flex-direction:column;
         align-items: center;
-        margin: -15vh auto 0 auto;
+        width: 80vw;
+        margin: -15em auto 0 auto;
         border: solid 1px blanchedalmond;
         border-radius: 5px;
         font-size: 5px;
@@ -393,55 +384,102 @@ body {
         align-items: center;
         width: 80vw;
     }
+    #prep-info {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        margin-top: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid blanchedalmond;
+        background-color: black;
+        border-radius:5px;
+        white-space: normal;
+    }
+
     .ci {
-        display: flex;
-        flex-direction: column;
-        padding: 3px 0;
+        height: 100%;
+        padding: 1em 0 0 0;
     }
     .ci, .a {
-    font-size: 5px;
+    font-size: 1.6em;
+    text-align: center;
     }
-    .ci:nth-child(3) {
-        margin-left:5px;
+    .a {
+        padding-bottom: 0.3em;
     }
-    .ci:nth-child(4) {
-        margin-left:-1px;
-    }
-    .ci:nth-child(5) {
-        margin-left:-5px;
+    .b {
+        font-size: 1.5em;
     }
     #description {
+        text-align: center;
         padding:0 3px 0 3px;
-        margin-left: 0;
+        font-size: 3em;
+    }
+    .t1 {
+        padding-bottom: 0.5em;
+    }
+    #description p {
+        font-size: 1.2em;
     }
     #ingredients {
         padding:0 5px 0 4px;
+        font-size: 3em;
+    }
+    #ingredients p {
+        text-align: center;
     }
     #ingredients-list {
         margin:0;
         padding-top: 5px;
-        padding-left:1px;
+        margin-left: 1em;
         list-style-position: inside;
     }
     #instructions {
-        margin-left: -10px;
-        padding-right: 4px;
+        font-size: 3em;
+        margin-left: 0.5em;
     }
     #instructions-list > li{
         padding: 0;
     }
+    #nutrition > h2 {
+        font-size: 3em;
+    }
+    #nutrition-table-mobile {
+        margin: 0 auto;
+        width: 60%;
+    }
+    #nutrition-table-mobile-background {
+        width: 100%;
+    }
+    #nt {
+        font-size: 2.5em;
+    }
     .background-label {
         display: none;
     }
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 8vh;
+    }
+    footer p {
+        overflow: clip;
+    }
     #footer-link {
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        width: 100vw;
+        width: 100%;
+        height: 100%;
         font-size: 10px;
         border-top: 1px solid black;
     }
     #footer-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 3em !important;
         transition: transform 0.5s ease-out !important;
         padding: 0 !important;
 
@@ -454,5 +492,81 @@ body {
 @media (min-width: 600px) {
     #nutrition-table-mobile {
         display: none;
+    }
+}
+@media (min-width: 700px) and (max-width: 1024px) {
+    #nav-bar {
+        height: 9vh;
+    }
+    #nav-list, #nav-list li, .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    #second-wrapper {
+        width: 90vw;
+    }
+    #prep-info {
+        margin-top: 26vh; 
+    }
+    footer {
+        height: 9vh;
+    }
+    #footer-link, #footer-option {
+        height: 100%;
+    }
+}
+@media (min-width: 1900px) and (max-width: 2570px) {
+    #title {
+        padding-top: 10vh;
+    }
+    #second-wrapper {
+        margin-top: -15vh;
+    }
+    #third-wrapper {
+        margin-top: 2vh;
+    }
+    #nav-bar {
+        height: 10vh;
+        overflow: clip;
+    }
+    .nav-link {
+        padding: 100% 1vw;
+    }
+    footer {
+        height: 10vh;
+    }
+    #footer-link {
+        height: 100%;
+    }
+    #footer-option {
+        height: 100%;
+    }
+}
+@media (min-width: 3800px) {
+    #nav-bar {
+        height: 10vh;
+        overflow: clip;
+    }
+    .nav-link {
+        padding: 100% 1vw;
+    }
+    #second-wrapper {
+        margin-top: -10vh;
+    }
+    #third-wrapper {
+        margin-top: 5vh;
+    }
+    footer {
+        position: relative;
+        bottom: -0.5vh;
+        height: 10vh;
+    }
+    #footer-link {
+        height: 100%;
+    }
+    #footer-option {
+        height: 100%;
     }
 }
